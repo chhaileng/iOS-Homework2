@@ -57,6 +57,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         if textField.tag == 2 {
             let countryCode = UITextField(frame: CGRect(x: 0, y: 0, width: 77, height: 30))
             countryCode.text = " (+855)"
+            countryCode.isUserInteractionEnabled = false
             countryCode.font = UIFont.systemFont(ofSize: 23)
             textField.leftViewMode = UITextFieldViewMode.always
             textField.leftView = countryCode
