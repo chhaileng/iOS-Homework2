@@ -190,6 +190,7 @@
                         <viewLayoutGuide key="safeArea" id="SDl-fO-yIg"/>
                     </view>
                     <connections>
+                        <outlet property="welcomeImage" destination="s6C-so-SV9" id="Mez-Zc-E3p"/>
                         <outlet property="welcomeMessageLabel" destination="RUi-ZM-9WD" id="nV6-5C-vRs"/>
                     </connections>
                 </viewController>

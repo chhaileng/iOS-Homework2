@@ -90,6 +90,34 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if usernameTextField.text == nil || usernameTextField.text == "" {
+            let alert = UIAlertController(title: "Required", message: "Username is required!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        if passwordTextField.text == nil || passwordTextField.text == "" {
+            let alert = UIAlertController(title: "Required", message: "Password is required!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        if phoneTextField.text == nil || phoneTextField.text == "" {
+            let alert = UIAlertController(title: "Required", message: "Phone is required!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        if emailTextField.text == nil || emailTextField.text == "" {
+            let alert = UIAlertController(title: "Required", message: "Email is required!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+            return
+        }
+        
         if segue.identifier == "showWelcome" {
             let welcome = segue.destination as! WelcomeViewController
             welcome.username = usernameTextField.text!

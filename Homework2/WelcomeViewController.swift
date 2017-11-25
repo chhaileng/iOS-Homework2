@@ -14,6 +14,8 @@ class WelcomeViewController: UIViewController {
     var phone: String?
     var email: String?
 
+    @IBOutlet weak var welcomeImage: UIImageView!
+    
     var alertMsg: String {
         return "Username: \(String(describing: username!))\nPassword: *******\nPhone: \(String(describing: phone!))\nEmail: \(String(describing: email!))"
     }
@@ -27,7 +29,17 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.welcomeImage.alpha = 0.0
         welcomeMessageLabel.text = "Welcome \(username!), your account has been created!"
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 2, animations: {
+            self.welcomeImage.alpha = 1.0
+        }, completion: nil)
     }
     
 }
